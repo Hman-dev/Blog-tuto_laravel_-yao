@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('acceuil');
+    return view('posts/acceuil');
 });
 
 Auth::routes();
