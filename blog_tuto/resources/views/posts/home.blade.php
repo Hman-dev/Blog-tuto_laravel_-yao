@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <title>{{Auth::user()->name}} | Tableau de bord</title>
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <style media="screen">
@@ -98,23 +98,73 @@ a:hover{color:inherit;border-bottom:none;text-decoration:none;}
 </style>
     </head>
     <body>
-   <div class="container">
 
-@if(session('status'))
-<div class="alert alert-success">
-  {{session('status')}}
-</div>
-@endif
 
-<div class="span3 well ">
-<div class="center">
-  <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="140" height="140" class="img-circle"></a>
-  <h3>{{Auth::user()->name}}</h3>
-  <em>click my face for more</em>
-</div>
-</div>
-   </div>
-   <a href="{{url('posts')}}" class="styles__CategoryButton-sc-12bmj7v-2 cPlcLj">
+
+<div class="container">
+
+    @if(session('status'))
+    <div class="alert alert-success">
+      {{session('status')}}
+    </div>
+    @endif
+
+  <div class="span3 well">
+    <center>
+      <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="140" height="140" class="img-circle"></a>
+      <h3>{{Auth::user()->name}}</h3>
+      <em>click my face for more</em>
+    </center>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title" id="myModalLabel">More About Joe</h4>
+        </div>
+        <div class="modal-body">
+          <center>
+            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+            <h3 class="media-heading">Joe Sixpack <small>USA</small></h3>
+            <span><strong>Skills: </strong></span>
+            <span class="label label-warning">HTML5/CSS</span>
+            <span class="label label-info">Adobe CS 5.5</span>
+            <span class="label label-info">Microsoft Office</span>
+            <span class="label label-success">Windows XP, Vista, 7</span>
+          </center>
+          <hr>
+          <center>
+            <p class="text-left"><strong>Bio: </strong><br>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
+            <br>
+          </center>
+        </div>
+        <div class="modal-footer">
+          <center>
+            <button type="button" class="btn btn-default" data-dismiss="modal">I've heard enough about Joe</button>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div style="margin:auto;" class="styles__LearningPreferencesStyled-sc-12bmj7v-0 epBefi">
+<div class="styles__CategoryButtons-sc-12bmj7v-1 zWiuY">
+    <a href="{{route('posts.create')}}" class="styles__CategoryButton-sc-12bmj7v-2 cPlcLj">
+    <div class="styles__CategoryButton_Icon-sc-12bmj7v-3 habppD"><svg width="161" height="147" viewBox="0 0 161 147" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M135.204 119.528H25.7964C23.7044 119.518 22.011 117.804 22 115.686V28.842C22.011 26.724 23.7044 25.01 25.7964 25H135.168C137.26 25.01 138.953 26.724 138.964 28.842V115.686C138.954 117.789 137.283 119.497 135.206 119.528H135.204ZM29.301 35.087H68.3656Z" fill="#DAE1F2"></path>
+        <path d="M22 44.559H139M29.301 35.087H68.3656M135.204 119.528H25.7964C23.7044 119.518 22.011 117.804 22 115.686V28.842C22.011 26.724 23.7044 25.01 25.7964 25H135.168C137.26 25.01 138.953 26.724 138.964 28.842V115.686C138.954 117.789 137.283 119.497 135.206 119.528H135.204Z" stroke="#455A7F" stroke-width="2.93" stroke-linecap="round" stroke-linejoin="round"></path>
+        <rect x="23" y="46" width="115" height="73" fill="#455A7F"></rect>
+        <path d="M105.174 37.438C106.419 37.438 107.429 36.4172 107.429 35.158C107.429 33.8988 106.419 32.878 105.174 32.878C103.929 32.878 102.919 33.8988 102.919 35.158C102.919 36.4172 103.929 37.438 105.174 37.438Z" fill="#455A7F"></path>
+        <path d="M116.786 37.438C118.031 37.438 119.041 36.4172 119.041 35.158C119.041 33.8988 118.031 32.878 116.786 32.878C115.541 32.878 114.531 33.8988 114.531 35.158C114.531 36.4172 115.541 37.438 116.786 37.438Z" fill="#455A7F"></path>
+        <path d="M128.389 37.438C129.634 37.438 130.644 36.4172 130.644 35.158C130.644 33.8988 129.634 32.878 128.389 32.878C127.144 32.878 126.134 33.8988 126.134 35.158C126.134 36.4172 127.144 37.438 128.389 37.438Z" fill="#455A7F"></path>
+        <path d="M88.668 61.766L72.172 98.952M63.405 63.8L46.421 80.312L63.405 63.8ZM46.366 80.33L62.694 97.495L46.366 80.33ZM97.436 98.28L114.409 81.76L97.436 98.28ZM114.475 81.74L98.138 64.577L114.475 81.74Z" stroke="white" stroke-width="2.93" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg></div>
+    <p class="jss86 jss89 jss77 " variant="h6" align="center">Ajouter un article</p>
+  </a>
+  <a href="{{url('posts')}}" class="styles__CategoryButton-sc-12bmj7v-2 cPlcLj">
     <div class="styles__CategoryButton_Icon-sc-12bmj7v-3 habppD"><svg width="164" height="144" viewBox="0 0 164 144" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="20" y="82" width="135" height="36" rx="18" fill="#FFCDB2"></rect>
         <rect x="41" y="112" width="95" height="6" fill="#ED956E"></rect>
@@ -128,8 +178,7 @@ a:hover{color:inherit;border-bottom:none;text-decoration:none;}
         <path d="M28.79 101.24C28.79 101.24 29.45 111.24 44.26 111.81H92.52M137.01 92.34V106.99M144.18 99.67H129.52M155.89 106.53C157.061 106.53 158.205 106.877 159.179 107.528C160.152 108.178 160.911 109.103 161.359 110.185C161.807 111.266 161.925 112.457 161.696 113.605C161.468 114.753 160.904 115.808 160.076 116.636C159.248 117.464 158.193 118.028 157.045 118.256C155.897 118.485 154.706 118.367 153.624 117.919C152.543 117.471 151.618 116.713 150.968 115.739C150.317 114.765 149.97 113.621 149.97 112.45L155.89 106.53Z" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg></div>
     <p class="jss86 jss90 jss77 " variant="h6" align="center">Liste des articles</p>
-</a>
-   <a href="/" class="styles__CategoryButton-sc-12bmj7v-2 cPlcLj">
+</a><a href="/" class="styles__CategoryButton-sc-12bmj7v-2 cPlcLj">
     <div class="styles__CategoryButton_Icon-sc-12bmj7v-3 habppD"><svg width="162" height="145" viewBox="0 0 162 145" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M21 21L25.5 9L38.5 2H115L127 7L135.5 19V138L106 116H39.5L27 110.5L21 96.5V21Z" fill="#F8F8FF"></path>
         <path d="M137.496 144.317L104.976 118.133H42.912C29.822 118.12 19.213 107.526 19.2 94.453V23.68C19.213 10.607 29.822 0.013 42.912 0H113.784C126.874 0.013 137.483 10.607 137.496 23.68V144.317V144.317ZM42.912 4.074C32.075 4.088 23.293 12.857 23.28 23.679V94.454C23.293 105.276 32.075 114.045 42.912 114.059H106.416L133.416 135.797V23.679C133.403 12.857 124.621 4.088 113.784 4.074H42.912V4.074Z" fill="#455A7F"></path>
@@ -137,7 +186,10 @@ a:hover{color:inherit;border-bottom:none;text-decoration:none;}
       </svg></div>
     <p class="jss86 jss91 jss77 " variant="h6" align="center">Accueil</p>
   </a></div>
-  <div class="MuiBox-root jss92"><a style="flex:1" href="/explore"><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined jss62 jss93 jss57   MuiButton-disableElevation MuiButton-fullWidth" tabindex="0" type="button"><span class="MuiButton-label">Déconnexion</span></button></a></div>
+<div class="MuiBox-root jss92"><a style="flex:1" href="/explore"><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined jss62 jss93 jss57   MuiButton-disableElevation MuiButton-fullWidth" tabindex="0" type="button"><span class="MuiButton-label">Déconnexion</span></button></a></div>
+</div>
 
-</body>
+</div>
+
+    </body>
 </html>

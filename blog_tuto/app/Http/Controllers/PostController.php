@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 
+// ici on créer par défaut toutes les méthodes du CRUD d'articles avec la cmde Php artisan pour notre controlles ...
 class PostController extends Controller
 {
     /**
@@ -26,8 +27,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        //les articles seront créer ici 
-        return view('posts.create'); 
+        /*les articles seront créer ici.les points 
+        correspondent à la nvaigaton dans à l'aborescence des vues dans laravel*/
+        return view('posts.back.create'); 
 
     }
 
@@ -41,7 +43,7 @@ class PostController extends Controller
     {
         // pour stocker un article en bdd et créer un nouvel article 
         $post = Post::create($request->all());
-        return redirect('posts')->with('status','Votre statu a été ajouté avec succès');
+        return redirect('posts')->with('status','Votre article a été ajouté avec succès');
     }
 
     /**
