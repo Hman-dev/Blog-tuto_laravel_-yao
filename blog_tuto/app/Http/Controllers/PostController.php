@@ -15,9 +15,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        /*Cmt faire pour envoyer les mêmes données quel que soit l'url qui envoyer pour faire appelle à la racine ou pour lister les articles simples et celles 
+        qui sont dans notre bdd etc . pour cela on aura plus besoin dela variable $posts */
         $posts = Post::orderby('id','asc')->pagination(10);
-        return view('posts.index', ['posts' => $posts]);
+        return view('acceuil', ['posts' => $posts]);
     }
 
     /**
